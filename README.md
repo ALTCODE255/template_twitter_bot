@@ -22,6 +22,6 @@
    1. Ex. In crontab, you'd put `30 * * * * python path\to\folder\bot.py` to have the script run every hour at the :30 minute mark.
 5. That's it!
 
-**NOTE:** Do _not_ delete the **"recent.pkl"** file from the folder unless you wish to reset the log of recent tweets. It is necessary for keeping a record of the most recently generated tweets to avoid being throttled by Twitter for duplicate tweets.
+**NOTE:** Do _not_ delete the `recent.pkl` file from the folder unless you wish to reset the log of recent tweets. It is necessary for keeping a record of the most recently generated tweets to avoid being throttled by Twitter for duplicate tweets.
 
 **Tip:** If you want to know how many tweets are counted in your source file, run `python util.py count`. If you want to know _which_ tweets are being counted from your source file, run `python util.py list`. For both, run `python util.py` (no arguments).
