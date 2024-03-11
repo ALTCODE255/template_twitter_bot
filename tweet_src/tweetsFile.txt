@@ -2,4 +2,4 @@
 # The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".
 # It is up to you to ensure that each tweet is at maximum 280 characters long.
 # Please have at minimum 12 tweets in this file.
-# If you need examples, check out https://github.com/ALTCODE255/quotebots or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt
+# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweet_src or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt

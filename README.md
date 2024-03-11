@@ -21,7 +21,7 @@
 4. Use a task scheduler of your choice to schedule your machine to **run the Python file** however often you want your Twitter bot to tweet.
    1. Ex. In crontab, you'd put `30 * * * * python path\to\folder\bot.py` to have the script run every hour at the :30 minute mark.
 5. (OPTIONAL) If you have multiple Twitter bots you want to run:
-   1. Create a new `.txt` file in the `tweets_src` folder for your new bot's source of tweets. Name it whatever you like, but keep this name in mind.
+   1. Create a new `.txt` file in the `tweet_src` folder for your new bot's source of tweets. Name it whatever you like, but keep this name in mind.
    2. Add a new section to the `config.json` file to fill in your new bot's credentials (see `config-multiple.json` for syntax).
    3. In place of where `tweetsFile` would be, write the name of your new `.txt` file here (without ".txt").
    4. Do this for however many bots you'd like to include.
