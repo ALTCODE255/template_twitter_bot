@@ -32,9 +32,9 @@ def getConfig() -> dict:
 
 
 def initClient(credentials: dict[str, str]) -> tweepy.Client:
-    env_vars = {"CONSUMER_KEY", "CONSUMER_SECRET",
-                "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"}
-    if not set(credentials.keys).issuperset(env_vars):
+    credential_vars = {"CONSUMER_KEY", "CONSUMER_SECRET",
+                       "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"}
+    if not set(credential_vars).issubset(credentials):
         sys.exit("Incomplete config.json. One or more API keys are missing. Ensure CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET are supplied.")
 
     return tweepy.Client(
@@ -53,7 +53,8 @@ def getRandomTweet(name: str, log: list[str]) -> str:
     except FileNotFoundError:
         with open("tweet_src/" + name + ".txt", "w+") as f:
             f.write('''# Place tweets here. There should be one tweet per line. If you have 'multi-line' tweets, write "\n" where you want your line breaks to be.\n# The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".\n# It is up to you to ensure that each tweet is at maximum 280 characters long.\n# Please have at minimum 12 tweets in this file.\n# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweet_src or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt''')
-        sys.exit(f"Source file '{name}.txt' not found. A clean file has been generated for you.")
+        sys.exit(f"Source file '{
+                 name}.txt' not found. A clean file has been generated for you.")
     valid_tweets = [tweet for tweet in all_tweets if tweet not in log]
     if valid_tweets:
         random_tweet = random.choice(valid_tweets).replace("\\n", "\n")
