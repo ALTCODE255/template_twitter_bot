@@ -1,5 +1,6 @@
 {
     "STORAGE_THRESHOLD": 11,
+    "TWEET_CHR_LIMIT": 280,
     "BOT_CREDENTIALS": {
         "tweetsFile": {
             "CONSUMER_KEY": "",
