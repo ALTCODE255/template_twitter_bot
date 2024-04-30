@@ -1,14 +1,20 @@
 {
-    "STORAGE_THRESHOLD": 11,
-    "TWEET_CHR_LIMIT": 280,
-    "BOT_CREDENTIALS": {
-        "tweetsFile": {
+    "anyNameHere": {
+        "filepath": "tweet_src/tweetsFile.txt",
+        "storage_threshold": 11,
+        "tweet_chr_limit": 280,
+        "credentials": {
             "CONSUMER_KEY": "",
             "CONSUMER_SECRET": "",
             "ACCESS_TOKEN": "",
             "ACCESS_TOKEN_SECRET": ""
-        },
-        "tweetsFile2": {
+        }
+    },
+    "otherNameHere": {
+        "filepath": "tweet_src/tweetsFile2.txt",
+        "storage_threshold": 11,
+        "tweet_chr_limit": 280,
+        "credentials": {
             "CONSUMER_KEY": "",
             "CONSUMER_SECRET": "",
             "ACCESS_TOKEN": "",
