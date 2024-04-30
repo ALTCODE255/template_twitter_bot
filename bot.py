@@ -45,7 +45,7 @@ def validateConfig(config: dict):
     schema = {
         "type": "object",
         "patternProperties": {
-            r"/^\S*$/": {
+            ".*": {
                 "type": "object",
                 "properties": {
                     "filepath": {"type": "string"},
@@ -75,7 +75,8 @@ def validateConfig(config: dict):
                 "required": ["filepath", "storage_threshold",
                              "tweet_chr_limit", "credentials"]
             }
-        }
+        },
+        "minProperties": 1
     }
 
     try:
@@ -123,7 +124,7 @@ if __name__ == "__main__":
         if name not in dict_log:
             dict_log[name] = [None] * config["storage_threshold"]
 
-        valid_tweets = getValidTweets(config["filename"],
+        valid_tweets = getValidTweets(config["filepath"],
                                       config["storage_threshold"],
                                       config["tweet_chr_limit"])
         bot = Bot(config["credentials"], valid_tweets)
