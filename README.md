@@ -5,8 +5,9 @@
 1. A host machine or server (e.g. a Raspberry Pi) that can be scheduled to run a Python script on an interval
 2. Python 3.8+
 3. [Tweepy](https://pypi.org/project/tweepy/) (install using `pip install tweepy`)
-4. A [Twitter App](https://developer.twitter.com/en/portal/) that uses Twitter API v2 and has "Read and write" user authentication app permissions
-5. At least 12 different possible tweets for the script to choose from. The more, the merrier.
+4. [jsonschema](https://pypi.org/project/jsonschema/) (install using `pip install jsonschema`)
+5. A [Twitter App](https://developer.twitter.com/en/portal/) that uses Twitter API v2 and has "Read and write" user authentication app permissions
+6. At least 12 different possible tweets for the script to choose from. The more, the merrier.
 
 ### Instructions
 
