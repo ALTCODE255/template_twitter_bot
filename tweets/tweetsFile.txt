@@ -1,4 +1,4 @@
 # Place tweets here. There should be one tweet per line. If you have 'multi-line' tweets, write "\n" where you want your line breaks to be.
 # The script will ignore any empty lines, as well as lines that are 'commented' out with a "#".
 # Please have at minimum 12 tweets in this file.
-# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweet_src or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt
+# If you need examples, check out https://github.com/ALTCODE255/namelessquotebots/blob/master/tweets or https://github.com/ALTCODE255/30music_shuuen/blob/master/music.txt

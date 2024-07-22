@@ -1,6 +1,6 @@
 {
     "anyNameHere": {
-        "filepath": "tweet_src/tweetsFile.txt",
+        "filepath": "tweets/tweetsFile.txt",
         "storage_threshold": 11,
         "tweet_chr_limit": 280,
         "credentials": {

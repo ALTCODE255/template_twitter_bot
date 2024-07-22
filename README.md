@@ -17,9 +17,9 @@
 3. Paste your Twitter API keys in the `config.json` file.
    1. (OPTIONAL) Set `storage_threshold` to an integer higher than `11` for higher "randomness".
       1. This variable indicates how many recent tweets the program stores (to avoid duplicate tweets).
-   2. (OPTIONAL) Change `tweet_src/tweetsFile.txt` to a different path or filename (relative or absolute OK).
+   2. (OPTIONAL) Change `tweets/tweetsFile.txt` to a different path or filename (relative or absolute OK).
       1. This variable indicates where you store your pool of potential tweets.
-4. In the `tweetsFile.txt` file located in the `tweet_src` folder (or other folder, if you changed it in step 3), fill the file with tweets according to the guidelines specified.
+4. In the `tweetsFile.txt` file located in the `tweets` folder (or other folder, if you changed it in step 3), fill the file with tweets according to the guidelines specified.
    1. If you changed `storage_threshold` in step 3, make sure the number of tweets you enter in this file is _higher_ than `storage_threshold`.
 5. Use a task scheduler of your choice to schedule your machine to **run the Python file** however often you want your Twitter bot to tweet.
    1. Ex. In crontab, you'd put `30 * * * * python path\to\folder\bot.py` to have the script run every hour at the :30 minute mark.
