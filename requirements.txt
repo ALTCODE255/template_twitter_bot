@@ -1,2 +1,2 @@
-tweepy
-jsonschema
+tweepy>=4.14.0
+jsonschema>=4.23.0
