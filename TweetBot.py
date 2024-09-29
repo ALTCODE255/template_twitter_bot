@@ -21,15 +21,14 @@ class Bot:
         return random_tweet
 
     def postTweet(self, log: list[str]):
-        while True:
-            tweet = self.getRandomTweet(log)
-            try:
-                self.client.create_tweet(text=tweet)
-                log.pop(0)
-                log.append(tweet)
-                return
-            except Exception as e:
-                if "duplicate content" in str(e):
-                    continue
-                print(e)
-                return
+        tweet = self.getRandomTweet(log)
+        try:
+            self.client.create_tweet(text=tweet)
+            log.pop(0)
+            log.append(tweet)
+        except tweepy.Forbidden as error:
+            if "duplicate content" in str(error):
+                print(f"Error! Duplicate content found: \"{tweet}\" Trying again...")
+                self.postTweet(log)
+            else:
+                print(error)
