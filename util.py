@@ -2,6 +2,7 @@ import re
 import sys
 import glob
 import os
+import random
 
 from bot import loadConfig
 
@@ -30,26 +31,38 @@ def getTweets(filename: str) -> list[str]:
         print(f"Source file '{filename}' not found.")
 
 
+def getRandomTweet(filename: str) -> str:
+    return random.choice(getTweets(filename))
+
+
 if __name__ == "__main__":
     os.chdir(sys.path[0])
     config_dict = loadConfig()
     if len(sys.argv) == 1 or sys.argv[1] == "help":
-        print("Commands:\n\
+        print(
+            "Commands:\n\
                   - help - displays this command\n\
+                  - random <file path> - selects a random valid tweet from the specified file.\n\
                   - countall - counts the number of valid tweets in every source file in tweets.\n\
                   - count <file path> - counts the number of valid tweets in a specified text file given a filepath.\n\
-                  - list <file path> - displays list of all valid tweets found in a specified text file.")
+                  - list <file path> - displays list of all valid tweets found in a specified text file."
+        )
     elif len(sys.argv) == 2 and sys.argv[1] == "countall":
         files = glob.glob("tweets/*.txt")
         for source in files:
             print(
-                "Number of Tweets in", source + ":",
+                "Number of Tweets in",
+                source + ":",
                 getNumTweets(source),
             )
     elif len(sys.argv) >= 3:
-        if sys.argv[1] == "list":
-            print(f"List of Valid Tweets in {sys.argv[2]}:",
-                  getTweets(sys.argv[2]))
-        elif sys.argv[1] == "count":
-            print(f"Number of Valid Tweets in {sys.argv[2]}:",
-                  getNumTweets(sys.argv[2]))
+        match sys.argv[1]:
+            case "list":
+                print(f"List of Valid Tweets in {sys.argv[2]}:", getTweets(sys.argv[2]), sep="\n")
+            case "count":
+                print(
+                    f"Number of Valid Tweets in {sys.argv[2]}:",
+                    getNumTweets(sys.argv[2]),
+                )
+            case "random":
+                print(f"Random Tweet from {sys.argv[2]}:", getRandomTweet(sys.argv[2]), sep="\n")
