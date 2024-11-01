@@ -3,7 +3,8 @@ import random
 
 
 class Bot:
-    def __init__(self, credentials: dict[str, str], tweets: list[str]):
+    def __init__(self, label: str, credentials: dict[str, str], tweets: list[str]):
+        self.label = label # for debugging 
         self.client = self.initClient(credentials)
         self.tweets = tweets
 
@@ -28,8 +29,8 @@ class Bot:
             log.append(tweet)
         except tweepy.Forbidden as error:
             if "duplicate content" in str(error):
-                print(f"Error! Duplicate content found: \"{tweet}\". Try increasing your storage_threshold config value!")
+                print(f"[{self.label}] Error! Duplicate content found: \"{tweet}\". Try increasing your storage_threshold config value!")
             else:
-                print(error)
+                print(f"[{self.label}]", error)
         except tweepy.TooManyRequests as error:
-            print(error)
+            print(f"[{self.label}]", error)

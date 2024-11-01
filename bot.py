@@ -128,7 +128,7 @@ if __name__ == "__main__":
         valid_tweets = getValidTweets(config["filepath"],
                                       config["storage_threshold"],
                                       config["tweet_chr_limit"])
-        bot = Bot(config["credentials"], valid_tweets)
+        bot = Bot(name, config["credentials"], valid_tweets)
         bot.postTweet(dict_log[name])
 
     with open("recent.pkl", "wb") as f:
