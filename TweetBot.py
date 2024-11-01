@@ -30,7 +30,10 @@ class Bot:
         except tweepy.Forbidden as error:
             if "duplicate content" in str(error):
                 print(f"[{self.label}] Error! Duplicate content found: \"{tweet}\". Try increasing your storage_threshold config value!")
+                print("Skipped:", self.label)
             else:
                 print(f"[{self.label}]", error)
+                print("Skipped:", self.label)
         except tweepy.TooManyRequests as error:
             print(f"[{self.label}]", error)
+            print("Skipped:", self.label)
