@@ -28,7 +28,8 @@ class Bot:
             log.append(tweet)
         except tweepy.Forbidden as error:
             if "duplicate content" in str(error):
-                print(f"Error! Duplicate content found: \"{tweet}\" Trying again...")
-                self.postTweet(log)
+                print(f"Error! Duplicate content found: \"{tweet}\". Try increasing your storage_threshold config value!")
             else:
                 print(error)
+        except tweepy.TooManyRequests as error:
+            print(error)
